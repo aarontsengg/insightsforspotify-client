@@ -1,0 +1,36 @@
+<div class="top-tracks-container">
+    <h1>Your Top Tracks</h1>
+  
+    <!-- Time Range Selector -->
+    <div class="time-range-selector">
+      <label for="timeRange">Select Time Range:</label>
+      <select id="timeRange" (change)="onTimeRangeChange($event)">
+        <option *ngFor="let range of timeRanges" [value]="range.value" [selected]="range.value === selectedTimeRange">
+          {{ range.label }}
+        </option>
+      </select>
+    </div>
+  
+    <!-- Loading State -->
+    <div *ngIf="loading" class="loading">
+      Loading your top tracks...
+    </div>
+  
+    <!-- No Tracks State -->
+    <div *ngIf="!loading && tracks.length === 0" class="no-tracks">
+      <p>No tracks found for this time range.</p>
+    </div>
+  
+    <!-- Tracks List -->
+    <div *ngIf="!loading && tracks.length > 0" class="tracks-list">
+      <div *ngFor="let track of tracks" class="track-card">
+        <img [src]="track.image || 'assets/placeholder.png'" alt="Album Art" class="album-art">
+        <div class="track-info">
+          <h3>{{ track.name }}</h3>
+          <p>Artist: {{ track.artist }}</p>
+          <p>Album: {{ track.album }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

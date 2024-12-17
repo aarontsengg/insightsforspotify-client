@@ -1,0 +1,25 @@
+/* Page Wrapper for Flexbox Layout */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure full height */
+}
+
+.home-container, .top-tracks-container, .top-artists-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Full viewport height */
+}
+
+.features-section, .tracks-list, .artists-list {
+  flex: 1; /* Allow content to grow and push footer to bottom */
+}
+
+/* Footer Styling */
+footer {
+  background-color: #000000;
+  color: #b3b3b3;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 0.9rem;
+}

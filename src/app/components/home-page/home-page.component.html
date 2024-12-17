@@ -1,0 +1,38 @@
+<div class="home-container">
+
+    <!-- Hero Section -->
+  <div class="hero-section">
+    <h1>Welcome to <span>Insights for Spotify</span></h1>
+    <p *ngIf="!isLoggedIn">Discover your top tracks, favorite artists, and listening habits.</p>
+    <p *ngIf="isLoggedIn && userProfile">
+      Logged in as <strong>{{ userProfile.display_name }}</strong>
+    </p>
+    <img
+      *ngIf="isLoggedIn && userProfile?.images?.length"
+      [src]="userProfile.images[0]?.url"
+      alt="Profile Picture"
+      class="profile-pic"
+    />
+    <button *ngIf="!isLoggedIn" class="cta-button" (click)="login()">Login with Spotify</button>
+  </div>
+  
+    <!-- Features Overview -->
+    <div class="features-section">
+      <h2>What You Can Explore</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>🎵 Top Tracks</h3>
+          <p>View your most-played tracks over different time ranges.</p>
+        </div>
+        <div class="feature-card">
+          <h3>🎤 Top Artists</h3>
+          <p>See which artists you can't stop listening to.</p>
+        </div>
+        <div class="feature-card">
+          <h3>📊 Listening Stats</h3>
+          <p>Get personalized insights into your music habits.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  

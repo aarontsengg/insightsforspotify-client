@@ -1,0 +1,35 @@
+<div class="top-artists-container">
+    <h1>Your Top Artists</h1>
+  
+    <!-- Time Range Selector -->
+    <div class="time-range-selector">
+      <label for="timeRange">Select Time Range:</label>
+      <select id="timeRange" (change)="onTimeRangeChange($event)">
+        <option *ngFor="let range of timeRanges" [value]="range.value" [selected]="range.value === selectedTimeRange">
+          {{ range.label }}
+        </option>
+      </select>
+    </div>
+  
+    <!-- Loading State -->
+    <div *ngIf="loading" class="loading">
+      Loading your top artists...
+    </div>
+  
+    <!-- No Data State -->
+    <div *ngIf="!loading && artists.length === 0" class="no-data">
+      <p>No artists found for this time range. Try listening to some music on Spotify!</p>
+    </div>
+  
+    <!-- Artists List -->
+    <div *ngIf="!loading && artists.length > 0" class="artists-list">
+      <div *ngFor="let artist of artists" class="artist-card">
+        <img [src]="artist.image" alt="{{ artist.name }}" class="artist-image">
+        <div class="artist-info">
+          <h3>{{ artist.name }}</h3>
+          <p>Genres: {{ artist.genres }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
