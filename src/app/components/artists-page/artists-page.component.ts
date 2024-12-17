@@ -34,7 +34,8 @@ export class ArtistsPageComponent {
         this.artists = response.items.map((artist: any) => ({
           name: artist.name,
           genres: artist.genres.join(', ') || 'N/A',
-          image: artist.images[0]?.url || 'assets/placeholder.png'
+          image: artist.images[0]?.url || 'assets/placeholder.png',
+          url: artist.external_urls.spotify
         }));
         this.loading = false;
       },

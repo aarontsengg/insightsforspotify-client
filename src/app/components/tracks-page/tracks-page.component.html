@@ -22,9 +22,13 @@
     </div>
   
     <!-- Tracks List -->
+  
     <div *ngIf="!loading && tracks.length > 0" class="tracks-list">
       <div *ngFor="let track of tracks" class="track-card">
-        <img [src]="track.image || 'assets/placeholder.png'" alt="Album Art" class="album-art">
+        <img src="/Spotify_Full_Logo_RGB_Green.png" alt="Spotify Logo" class="spotify-logo">
+        <p><a [href]="track.url" target="_blank" class="spotify-link">
+          <img [src]="track.image || 'assets/placeholder.png'" alt="Album Art" class="album-art">
+        </a></p>
         <div class="track-info">
           <h3>{{ track.name }}</h3>
           <p>Artist: {{ track.artist }}</p>
@@ -33,4 +37,3 @@
       </div>
     </div>
   </div>
-  

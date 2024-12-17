@@ -26,7 +26,7 @@ export class SpotifyService {
   getTopTracks(timeRange: 'short_term' | 'medium_term' | 'long_term'): Observable<any> {
     return this.http.get(`${this.baseUrl}/me/top/tracks`, { 
       headers: this.getAuthorizationHeaders(),
-      params: { time_range: timeRange, limit: 30 }
+      params: { time_range: timeRange, limit: 20 }
     });
   }
 
@@ -34,7 +34,7 @@ export class SpotifyService {
   getTopArtists(timeRange: 'short_term' | 'medium_term' | 'long_term'): Observable<any> {
     return this.http.get(`${this.baseUrl}/me/top/artists`, { 
       headers: this.getAuthorizationHeaders(),
-      params: { time_range: timeRange, limit: 30 }
+      params: { time_range: timeRange, limit: 20 }
     });
   }
 

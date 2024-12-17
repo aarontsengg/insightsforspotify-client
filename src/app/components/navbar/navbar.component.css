@@ -46,3 +46,34 @@
   .nav-links a.active {
     color: #1DB954; /* Spotify Green */
   }
+
+  /* Logo Container */
+.logo {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  gap: 10px; /* Space between logo and text */
+}
+
+/* Spotify Logo */
+.spotify-logo {
+  width: 30px; /* Adjust size as needed */
+  height: 30px;
+}
+
+/* Navbar Text */
+.navbar-brand {
+  text-decoration: none;
+  color: #1DB954; /* Spotify Green */
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.spotify-logo {
+  height: 40px; /* Adjust height as needed */
+  width: auto;
+}

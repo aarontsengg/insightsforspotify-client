@@ -24,7 +24,10 @@
     <!-- Artists List -->
     <div *ngIf="!loading && artists.length > 0" class="artists-list">
       <div *ngFor="let artist of artists" class="artist-card">
-        <img [src]="artist.image" alt="{{ artist.name }}" class="artist-image">
+        <img src="/Spotify_Full_Logo_RGB_Green.png" alt="Spotify Logo" class="spotify-logo">
+        <p><a [href]="artist.url" target="_blank" class="spotify-link">
+          <img [src]="artist.image" alt="{{ artist.name }}" class="artist-image">
+        </a></p>
         <div class="artist-info">
           <h3>{{ artist.name }}</h3>
           <p>Genres: {{ artist.genres }}</p>

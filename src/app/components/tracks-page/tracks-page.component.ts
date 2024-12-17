@@ -36,7 +36,8 @@ export class TracksPageComponent implements OnInit {
           name: track.name,
           artist: track.artists.map((artist: any) => artist.name).join(', '), // Combine all artists
           album: track.album.name,
-          image: track.album.images[0]?.url
+          image: track.album.images[0]?.url,
+          url: track.external_urls.spotify
         }));
         this.loading = false;
       },
