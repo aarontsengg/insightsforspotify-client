@@ -1,7 +1,9 @@
 # Insights For Spotify
 
-Try the project here: https://d3qtihjgdr0ews.cloudfront.net/
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.1.
+```
+Try the project here: https://d3qtihjgdr0ews.cloudfront.net/
+```
 
 ## Development server
 
